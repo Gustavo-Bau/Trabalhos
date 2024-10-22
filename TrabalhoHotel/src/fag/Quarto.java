@@ -12,4 +12,12 @@ public class Quarto {
         this.preco = preco;
         this.disponivel = true;
     }
+
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
+    }
 }

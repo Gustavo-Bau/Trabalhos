@@ -1,13 +1,12 @@
 package fag;
 
-import java.util.Date;
-
 public class Reserva {
     Hospede hospede;
     String checkin;
     String checkout;
     int numeroQuartos;
     String tipoQuarto;
+    boolean checkinFeito;
 
     public Reserva(Hospede hospede, String checkin, String checkout, int numeroQuartos, String tipoQuarto) {
         this.hospede = hospede;
@@ -15,6 +14,7 @@ public class Reserva {
         this.checkout = checkout;
         this.numeroQuartos = numeroQuartos;
         this.tipoQuarto = tipoQuarto;
+        this.checkinFeito = false;
     }
 
     public String getNomeHospede() {
@@ -36,4 +36,13 @@ public class Reserva {
     public String getTipoQuarto() {
         return tipoQuarto;
     }
+
+    public boolean isCheckinFeito() {
+        return checkinFeito;
+    }
+
+    public void setCheckinFeito(boolean checkinFeito) {
+        this.checkinFeito = checkinFeito;
+    }
 }
+
