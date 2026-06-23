@@ -39,7 +39,7 @@ export default function Contact() {
         const errorData = await response.json();
         setStatus(errorData.error || 'Erro ao enviar a mensagem.');
       }
-    } catch (error) {
+    } catch {
       setStatus('Erro de conexão ao tentar enviar.');
     }
   };
