@@ -14,6 +14,8 @@ const clients = [
   { name: 'Outros clientes', role: 'Projetos sob medida' },
 ];
 
+const scrollingClients = [...clients, ...clients];
+
 const plans = [
   {
     name: 'Básico',
@@ -120,15 +122,19 @@ function Clients() {
       <span className="text-sm font-bold text-sky-500">Conselho de quem conhece</span>
       <h2 className="mt-3 text-4xl font-black text-slate-900 md:text-5xl">Cada cliente importa!</h2>
       <p className="mx-auto mt-6 max-w-xl text-slate-500">Depoimentos de clientes que confiam na GBsolution para transformar ideias em presença digital.</p>
-      <div className="mx-auto mt-20 grid max-w-6xl gap-6 md:grid-cols-4">
-        {clients.map((client) => (
-          <article key={client.name} className="rounded-md bg-white px-8 py-16 shadow-sm">
-            <p className="mx-auto max-w-44 text-slate-500">A GBsolution ajudou a organizar minha presença online com uma página clara, moderna e pronta para captar contatos.</p>
-            <div className="mt-8 text-sky-300">★★★★★</div>
-            <h3 className="mt-5 font-black text-slate-900">{client.name}</h3>
-            <p className="mt-2 text-xs font-bold text-slate-500">{client.role}</p>
-          </article>
-        ))}
+      <div className="relative mx-auto mt-20 max-w-6xl overflow-hidden">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-sky-200 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-sky-200 to-transparent" />
+        <div className="clients-marquee flex w-max gap-6" aria-label="Depoimentos de clientes em carrossel">
+          {scrollingClients.map((client, index) => (
+            <article key={`${client.name}-${index}`} className="w-72 shrink-0 rounded-md bg-white px-8 py-16 shadow-sm md:w-80">
+              <p className="mx-auto max-w-44 text-slate-500">A GBsolution ajudou a organizar minha presença online com uma página clara, moderna e pronta para captar contatos.</p>
+              <div className="mt-8 text-sky-300">★★★★★</div>
+              <h3 className="mt-5 font-black text-slate-900">{client.name}</h3>
+              <p className="mt-2 text-xs font-bold text-slate-500">{client.role}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
