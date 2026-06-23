@@ -2,16 +2,15 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const solutions = [
-  'Sites institucionais com identidade visual forte e páginas responsivas.',
-  'Landing pages para campanhas, captação de leads e apresentação de serviços.',
-  'Automações e integrações para deixar o atendimento mais rápido e organizado.',
+  'Ideia matadora, nosso time já ganhou diversos eventos de inovação com nosso produto, entre eles podemos citar o CityFarm da FAG e Startup Garage.',
+  'Ideia matadora, nosso time já ganhou diversos eventos de inovação com nosso produto, entre eles podemos citar o CityFarm da FAG e Startup Garage',
+  'Ideia matadora, nosso time já ganhou diversos eventos de inovação com nosso produto, entre eles podemos citar o CityFarm da FAG e Startup Garage',
 ];
 
 const clients = [
   { name: 'Eduardo', role: 'Empreendedor digital' },
   { name: 'Gustavo', role: 'Gestor comercial' },
   { name: 'Adriel', role: 'Criador de conteúdo' },
-  { name: 'Outros clientes', role: 'Projetos sob medida' },
 ];
 
 const scrollingClients = [...clients, ...clients];
@@ -77,7 +76,7 @@ function Hero() {
       <div className="mx-auto max-w-3xl">
         <span className="mb-8 block text-sm font-bold text-sky-500">Olá</span>
         <h1 className="text-5xl font-black leading-tight tracking-tight text-slate-900 md:text-7xl">
-          Uma solução que irá te entregar X
+          Uma solução que irá te entregar resultados reais e crescimento previsível
         </h1>
         <p className="mx-auto mt-10 max-w-xl text-base leading-8 text-slate-500">
           Você sabe que, para alcançar o sucesso, é fundamental ter parceiros que te impulsionem a ir mais longe.

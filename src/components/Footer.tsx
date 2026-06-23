@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           
           <div className="flex flex-col gap-4">
-            <h3 className="text-xl font-bold text-[#1e293b]">LogoMarca</h3>
+            <h3 className="text-xl font-bold text-[#1e293b]">GBsolution</h3>
             <div className="flex gap-4 text-[#3aa3fb]">
               <a href="#" className="hover:text-blue-700 transition">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -46,7 +46,7 @@ export default function Footer() {
 
       <div className="bg-[#fafafa] py-6 text-center border-t border-gray-100">
         <p className="text-xs md:text-sm text-gray-500 font-semibold">
-          Aula de Programação Web ©2024 - Todos os direitos reservados.
+          GBsolution ©2026 - Todos os direitos reservados.
         </p>
       </div>
     </footer>
