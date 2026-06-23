@@ -2,18 +2,17 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const solutions = [
-  'Ideia matadora, nosso time já ganhou diversos eventos de inovação com nosso produto, entre eles podemos citar o CityFarm da FAG e Startup Garage.',
-  'Ideia matadora, nosso time já ganhou diversos eventos de inovação com nosso produto, entre eles podemos citar o CityFarm da FAG e Startup Garage',
-  'Ideia matadora, nosso time já ganhou diversos eventos de inovação com nosso produto, entre eles podemos citar o CityFarm da FAG e Startup Garage',
+  'Sites institucionais com identidade visual forte e páginas responsivas.',
+  'Landing pages para campanhas, captação de leads e apresentação de serviços.',
+  'Automações e integrações para deixar o atendimento mais rápido e organizado.',
 ];
 
 const clients = [
   { name: 'Eduardo', role: 'Empreendedor digital' },
   { name: 'Gustavo', role: 'Gestor comercial' },
   { name: 'Adriel', role: 'Criador de conteúdo' },
+  { name: 'Outros clientes', role: 'Projetos sob medida' },
 ];
-
-const scrollingClients = [...clients, ...clients];
 
 const plans = [
   {
@@ -72,11 +71,10 @@ function Hero() {
     <section id="inicio" className="relative isolate flex min-h-screen items-center overflow-hidden bg-white px-6 py-32 text-center">
       <div className="absolute -left-24 -top-24 h-64 w-64 rounded-br-[5rem] bg-sky-200" />
       <div className="absolute right-0 top-0 -z-10 h-[88%] w-[42%] rounded-bl-[5rem] bg-sky-200 max-md:hidden" />
-      <div className="absolute bottom-0 left-1/2 -z-10 h-8 w-2/3 -translate-x-1/2 rounded-t-full bg-sky-500" />
       <div className="mx-auto max-w-3xl">
         <span className="mb-8 block text-sm font-bold text-sky-500">Olá</span>
         <h1 className="text-5xl font-black leading-tight tracking-tight text-slate-900 md:text-7xl">
-          Uma solução que irá te entregar resultados reais e crescimento previsível
+          Uma solução que irá te entregar X
         </h1>
         <p className="mx-auto mt-10 max-w-xl text-base leading-8 text-slate-500">
           Você sabe que, para alcançar o sucesso, é fundamental ter parceiros que te impulsionem a ir mais longe.
@@ -121,17 +119,21 @@ function Clients() {
       <span className="text-sm font-bold text-sky-500">Conselho de quem conhece</span>
       <h2 className="mt-3 text-4xl font-black text-slate-900 md:text-5xl">Cada cliente importa!</h2>
       <p className="mx-auto mt-6 max-w-xl text-slate-500">Depoimentos de clientes que confiam na GBsolution para transformar ideias em presença digital.</p>
-      <div className="relative mx-auto mt-20 max-w-6xl overflow-hidden">
+      <div className="clients-viewport relative mx-auto mt-20 max-w-6xl overflow-hidden" aria-label="Depoimentos de clientes em carrossel horizontal">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-sky-200 to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-sky-200 to-transparent" />
-        <div className="clients-marquee flex w-max gap-6" aria-label="Depoimentos de clientes em carrossel">
-          {scrollingClients.map((client, index) => (
-            <article key={`${client.name}-${index}`} className="w-72 shrink-0 rounded-md bg-white px-8 py-16 shadow-sm md:w-80">
-              <p className="mx-auto max-w-44 text-slate-500">A GBsolution ajudou a organizar minha presença online com uma página clara, moderna e pronta para captar contatos.</p>
-              <div className="mt-8 text-sky-300">★★★★★</div>
-              <h3 className="mt-5 font-black text-slate-900">{client.name}</h3>
-              <p className="mt-2 text-xs font-bold text-slate-500">{client.role}</p>
-            </article>
+        <div className="clients-track flex w-max gap-6">
+          {[0, 1].map((group) => (
+            <div key={group} className="flex gap-6" aria-hidden={group === 1}>
+              {clients.map((client) => (
+                <article key={`${client.name}-${group}`} className="w-72 shrink-0 rounded-md bg-white px-8 py-16 shadow-sm md:w-80">
+                  <p className="mx-auto max-w-44 text-slate-500">A GBsolution ajudou a organizar minha presença online com uma página clara, moderna e pronta para captar contatos.</p>
+                  <div className="mt-8 text-sky-300">★★★★★</div>
+                  <h3 className="mt-5 font-black text-slate-900">{client.name}</h3>
+                  <p className="mt-2 text-xs font-bold text-slate-500">{client.role}</p>
+                </article>
+              ))}
+            </div>
           ))}
         </div>
       </div>

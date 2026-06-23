@@ -10,17 +10,21 @@
   }
 }
 
-.clients-marquee {
-  animation: clients-scroll 22s linear infinite;
+.clients-track {
+  animation: clients-scroll 9s linear infinite;
+  will-change: transform;
 }
 
-.clients-marquee:hover {
+.clients-viewport:hover .clients-track {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .clients-marquee {
-    animation: none;
+  .clients-viewport {
     overflow-x: auto;
+  }
+
+  .clients-track {
+    animation: none;
   }
 }
